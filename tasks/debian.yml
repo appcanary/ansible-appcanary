@@ -1,0 +1,15 @@
+---
+- name: Install debian-archive-keyring and apt-transport-https
+  apt: pkg={{ item }} state=present update_cache=true
+  with_items:
+    - debian-archive-keyring
+    - apt-transport-https
+
+- name: Add Package Cloud key
+  apt_key: id=418A7F2FB0E1E6E7EABF6FE8C2E73424D59097AB url=https://packagecloud.io/appcanary/agent/gpgkey state=present
+
+- name: Add Appcanary repository
+  apt_repository: repo='deb https://packagecloud.io/appcanary/agent/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} main' state=present update_cache=yes
+
+- name: Install appcanary agent
+  apt: name=appcanary state=present update_cache=yes

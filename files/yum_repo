@@ -1,0 +1,10 @@
+[appcanary_agent]
+name=appcanary_agent
+baseurl=https://packagecloud.io/appcanary/agent/el/$releasever/$basearch
+repo_gpgcheck=1
+gpgcheck=0
+enabled=1
+gpgkey=https://packagecloud.io/appcanary/agent/gpgkey
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+metadata_expire=300

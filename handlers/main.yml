@@ -1,0 +1,3 @@
+---
+- name: restart appcanary
+  service: name=appcanary state=restarted

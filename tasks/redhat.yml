@@ -1,0 +1,14 @@
+- name: Install pygpgme and yum-utils
+  yum: name={{ item }} state=present
+  with_items:
+    - pygpgme
+    - yum-utils
+
+- name: Add Appcanary repository
+  copy: src=yum_repo dest=/etc/yum.repos.d/appcanary_agent.repo owner=root group=root mode=0644
+
+- name: Update yum package cache
+  shell: yum -q makecache -y --disablerepo='*' --enablerepo='appcanary_agent'
+
+- name: Install appcanary agent
+  yum: name=appcanary state=present

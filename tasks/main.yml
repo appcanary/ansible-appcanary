@@ -1,0 +1,13 @@
+---
+# Install on debian and ubuntu
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+
+# Install on RHEL (CentOS, Amazon Linux, etc)
+- include: redhat.yml
+  when: ansible_os_family == "RedHat"
+
+- name: Upload appcanary config
+  template: src=agent.conf.j2 dest=/etc/appcanary/agent.conf
+  notify:
+    - restart appcanary
