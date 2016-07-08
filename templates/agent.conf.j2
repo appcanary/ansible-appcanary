@@ -7,7 +7,7 @@ path = "/var/lib/dpkg/status"
 
 {% if ansible_distribution == 'CentOS' and ansible_distribution_major_version ==  '7' %}
 [[files]]
-path = "rpm -qa"
+process = "rpm -qa"
 {% endif %}
 
 {% for file in monitored_files %}
