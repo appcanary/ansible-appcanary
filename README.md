@@ -20,7 +20,7 @@ Example Playbook
     
     - hosts: servers
       roles:
-         - { role: appcanary.agent, api_key: "MYAPIKEYHERE", monitored_files: ["/path/to/my/Gemfile.lock" "/path/to/another/Gemfile.lock"] }
+         - { role: appcanary.agent, api_key: "MYAPIKEYHERE", monitored_files: ["/path/to/my/Gemfile.lock", "/path/to/another/Gemfile.lock"] }
 
 License
 -------
