@@ -1,6 +1,6 @@
 [appcanary_agent]
 name=appcanary_agent
-baseurl=https://packagecloud.io/appcanary/agent/el/$releasever/$basearch
+baseurl=https://packagecloud.io/appcanary/agent/{{yum_distro}}/$releasever/$basearch
 repo_gpgcheck=1
 gpgcheck=0
 enabled=1
