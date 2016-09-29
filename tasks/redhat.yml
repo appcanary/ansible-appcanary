@@ -10,7 +10,14 @@
   when: ansible_distribution == 'Fedora'
 
 - name: Add Appcanary repository
-  template: src=yum_repo dest=/etc/yum.repos.d/appcanary_agent.repo owner=root group=root mode=0644
+  yum_repository:
+    name: appcanary_agent
+    description: Appcanary Agent Repository
+    gpgkey: https://packagecloud.io/appcanary/agent/gpgkey
+    repo_gpgcheck: yes
+    gpgcheck: no
+    baseurl: "https://packagecloud.io/appcanary/agent/{{yum_distro}}/$releasever/$basearch"
+    enabled: yes
 
 - name: Update yum package cache
   shell: yum -q makecache -y --disablerepo='*' --enablerepo='appcanary_agent'

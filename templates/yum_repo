@@ -1,10 +1,8 @@
-[appcanary_agent]
-name=appcanary_agent
-baseurl=https://packagecloud.io/appcanary/agent/{{yum_distro}}/$releasever/$basearch
-repo_gpgcheck=1
-gpgcheck=0
-enabled=1
-gpgkey=https://packagecloud.io/appcanary/agent/gpgkey
-sslverify=1
-sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-metadata_expire=300
+[appcanary_agent][appcanary_agent]
+baseurl = https://packagecloud.io/appcanary/agent/{{yum_distro}}/$releasever/$basearch
+enabled = 1
+gpgcheck = 0
+gpgkey = https://packagecloud.io/appcanary/agent/gpgkey
+name = Appcanary Agent Repository
+repo_gpgcheck = 1
+
