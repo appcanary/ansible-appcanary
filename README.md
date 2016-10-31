@@ -13,6 +13,7 @@ Role Variables
 
 - `api_key`: Your appcanary api key
 - `monitored_files`: A list of paths monitored 
+- `monitor_system_packages`: Boolean, determines whether Appcanary should monitor your system packages. Defaults to True.
 
 
 Example Playbook

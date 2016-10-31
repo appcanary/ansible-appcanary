@@ -1,2 +1,3 @@
 ---
 appcanary_files: []
+monitor_system_packages: True
