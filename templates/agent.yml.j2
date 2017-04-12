@@ -1,16 +1,12 @@
-api_key = "{{api_key}}"
+api_key: "{{api_key}}"
 
+watchers:
 {% if monitor_system_packages and ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian' %}
-[[files]]
-path = "/var/lib/dpkg/status"
+- path: "/var/lib/dpkg/status"
 {% endif %}
-
 {% if monitor_system_packages and ansible_distribution == 'CentOS' and ansible_distribution_major_version ==  '7' %}
-[[files]]
-process = "rpm -qa"
+- command: "rpm -qa"
 {% endif %}
-
 {% for file in monitored_files %}
-[[files]]
-path = "{{ file }}"
+- path: "{{ file }}"
 {% endfor %}

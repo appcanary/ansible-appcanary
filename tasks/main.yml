@@ -8,6 +8,6 @@
   when: ansible_os_family == "RedHat"
 
 - name: Upload appcanary config
-  template: src=agent.conf.j2 dest=/etc/appcanary/agent.conf
+  template: src=agent.yml.j2 dest=/etc/appcanary/agent.yml
   notify:
     - restart appcanary
