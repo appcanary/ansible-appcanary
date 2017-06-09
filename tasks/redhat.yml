@@ -11,4 +11,4 @@
   shell: yum -q makecache -y --disablerepo='*' --enablerepo='appcanary_agent'
 
 - name: Install appcanary agent
-  yum: name=appcanary state=present
+  yum: name=appcanary state=latest
