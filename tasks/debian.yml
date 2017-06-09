@@ -12,4 +12,4 @@
   apt_repository: repo='deb https://packagecloud.io/appcanary/agent/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} main' state=present update_cache=yes
 
 - name: Install appcanary agent
-  apt: name=appcanary state=present update_cache=yes
+  apt: name=appcanary state=latest update_cache=yes
